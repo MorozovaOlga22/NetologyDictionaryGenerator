@@ -9,6 +9,7 @@ public class DictionaryMaker implements Function<String, List<String>> {
     @Override
     public List<String> apply(String phrase) {
         return Arrays.stream(phrase.split(" "))
+                .distinct()
                 .sorted()
                 .collect(Collectors.toList());
     }
